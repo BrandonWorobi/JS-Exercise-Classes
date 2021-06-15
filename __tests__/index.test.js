@@ -49,55 +49,55 @@ describe('Instance of Person', () => {
   })
   
   describe('Instance of Car', () => {
-    let batmobile
+    let pickuptruck
     beforeEach(() => {
-      batmobile = new functions.Car('BatMobile', 20)
+      pickuptruck = new functions.Car('PickupTruck', 20)
     })
     it('[1] initializes with the given model', () => {
-      expect(batmobile.model).toBe('BatMobile')
+      expect(pickuptruck.model).toBe('PickupTruck')
     })
     it('[2] initializes with the given milesPerGallon', () => {
-      expect(batmobile.milesPerGallon).toEqual(20)
+      expect(pickuptruck.milesPerGallon).toEqual(20)
     })
     it('[3] initializes with an empty tank', () => {
-      expect(batmobile.tank).toEqual(0)
+      expect(pickuptruck.tank).toEqual(0)
     })
     it('[4] initializes with an odometer at 0 miles', () => {
-      expect(batmobile.odometer).toEqual(0)
+      expect(pickuptruck.odometer).toEqual(0)
     })
     it('[5] gets fill and drive methods from their prototype', () => {
-      expect(batmobile.__proto__.fill).not.toBeUndefined();
-      expect(batmobile.__proto__.drive).not.toBeUndefined();
+      expect(pickuptruck.__proto__.fill).not.toBeUndefined();
+      expect(pickuptruck.__proto__.drive).not.toBeUndefined();
     })
     it('[6] fill method increases the tank by the given gallons', () => {
-      batmobile.fill(10)
-      expect(batmobile.tank).toEqual(10)
-      batmobile.fill(10)
-      expect(batmobile.tank).toEqual(20)
+      pickuptruck.fill(10)
+      expect(pickuptruck.tank).toEqual(10)
+      pickuptruck.fill(10)
+      expect(pickuptruck.tank).toEqual(20)
     })
     it('[7] drive method when enough fuel increases odometer correctly', () => {
-      batmobile.fill(10)
-      batmobile.drive(50)
-      expect(batmobile.odometer).toEqual(50)
+      pickuptruck.fill(10)
+      pickuptruck.drive(50)
+      expect(pickuptruck.odometer).toEqual(50)
     })
     it('[8] drive method when enough fuel decreases tank correctly', () => {
-      batmobile.fill(10)
-      batmobile.drive(100)
-      expect(batmobile.tank).toEqual(5)
+      pickuptruck.fill(10)
+      pickuptruck.drive(100)
+      expect(pickuptruck.tank).toEqual(5)
     })
     it('[9] drive method when NOT enough fuel increases miles by drivable miles', () => {
-      batmobile.fill(10)
-      batmobile.drive(201)
-      expect(batmobile.odometer).toEqual(200)
+      pickuptruck.fill(10)
+      pickuptruck.drive(200)
+      expect(pickuptruck.odometer).toEqual(200)
     })
     it('[10] drive method when NOT enough fuel empties the tank', () => {
-      batmobile.fill(10)
-      batmobile.drive(201)
-      expect(batmobile.tank).toEqual(0)
+      pickuptruck.fill(10)
+      pickuptruck.drive(200)
+      expect(pickuptruck.tank).toEqual(0)
     })
     it('[11] drive method when NOT enough fuel returns correct string', () => {
-      batmobile.fill(10)
-      expect(batmobile.drive(201)).toContain(200)
+      pickuptruck.fill(10)
+      expect(pickuptruck.drive(200)).toContain(200)
     })
   })
   

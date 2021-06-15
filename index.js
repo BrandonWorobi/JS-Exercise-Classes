@@ -231,14 +231,14 @@ class Airplane {
           }
           
           const y = new ProjectManager({
-            name: "Evil Brandon",
+            name: "Brandon",
             age: 36.5,
             location: "TX",
             specialty: "Honesty",
             favLanguage: "JS",
             catchPhrase: "Someone has a case of the Monday's",
             gradClassName: "WEB30",
-            favInstructor: "Brian",
+            favInstructor: "Petar",
           });
           y.standUp("Math");
           y.gradeMethod("redux");
